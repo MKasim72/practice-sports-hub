@@ -1,0 +1,39 @@
+.navs:link{
+    text-decoration: none;
+    
+}
+.navbar .navbar-toggler .icon-bar{
+    background-color: white !important;
+ }
+ .rating-color{
+    color:#fbc634 !important;
+}
+ @media screen and (min-width:200px) and (max-width:700px) {
+    #bg_img{
+        width: 340px;
+        height: 250px;
+        /* justify-content: start; */
+    }
+    .hidden{
+        display: none;
+    }
+    #show_data{
+        display: flex;
+        justify-content: center;
+    }
+    #prod_img{
+        width: 350px;
+    }
+    #prod_nm{
+        margin-top: 25px;
+    }
+    #prod_desc{
+        font-size: 20px;
+    }
+    #cart_img{
+        width: 300px ;
+    }
+
+    
+ }
+
