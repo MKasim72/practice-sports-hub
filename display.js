@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    if(localStorage.getItem('cart') == undefined)
+        localStorage.setItem('cart',JSON.stringify([]))
+
+
     const selectedProduct = JSON.parse(window.localStorage.getItem('prod_id'));
     const selectedProductContainer = document.getElementById('selected-product');
     
@@ -385,10 +390,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const add=(id)=>{
     const current_prod = products.find((val,ind)=>val.id==id)
-    window.localStorage.setItem('cart',JSON.stringify(current_prod))
+    let cartItems = JSON.parse(localStorage.getItem("cart"))
+    
+    if(!cartItems.find((val)=>val.id == id)){
+            current_prod.quantity = 1
+            cartItems.push(current_prod)
+    }
+    else{
+        let obj = cartItems.find((val,ind)=>val.id==id)
+        obj.quantity += 1
+        
+    }
 
-
-
+    window.localStorage.setItem('cart',JSON.stringify(cartItems))
   }
 
   
